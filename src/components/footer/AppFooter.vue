@@ -1,11 +1,14 @@
 <template>
-    <div>
-        <div><i class="far fa-comments"></i></div>
-        <div><font-awesome-icon icon="user-secret" /></div>
-        <div><font-awesome-icon icon="comments" /></div>
-        <div><font-awesome-icon icon="save" /></div>
-        <div><font-awesome-icon icon="bell" /></div>
-        <div><font-awesome-icon icon="cogs" /></div>
+    <div class="footer">
+        <div>
+            <font-awesome-icon class="footer__icon" icon="bell" size="2x"/>
+            <font-awesome-icon class="footer__icon footer__inside_icon" icon="save" size="2x"/>
+        </div>
+        <div>
+            <font-awesome-icon class="footer__icon footer__inside_icon" icon="comments" size="2x"/>
+            <font-awesome-icon class="footer__icon" icon="cogs" size="2x"/>
+        </div>
+
     </div>
 </template>
 
@@ -16,6 +19,25 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+    @import '../../variables';
+.footer {
+    padding: 10px;
 
+    display: flex;
+    justify-content: space-between;
+}
+
+    .footer__inside_icon {
+        margin: 0 30px;
+    }
+
+    .footer__icon {
+        color: #9f9d9e;
+        border-color: black;
+
+        &:hover {
+            color: $green-color;
+        }
+    }
 </style>

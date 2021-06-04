@@ -10,7 +10,7 @@
                     class="home__lesson-tablet"></lessonTablet>
         <img class="home__bg-image" alt="bg image" src="../assets/3.jpg">
     </div>
-      <AppFooter></AppFooter>
+      <AppFooter class="home__footer"></AppFooter>
   </div>
 </template>
 
@@ -59,10 +59,10 @@ export default {
     width: $desctop-width;
     margin: 0 auto;
 
+      padding-bottom: 1px;
+
     box-shadow: 0 2px 2px rgba(0,0,0,0.5);
   }
-
-
 
   .home__lesson-wrapper {
     width: 95%;
@@ -91,5 +91,9 @@ export default {
     opacity: 0.9;
 
     background: linear-gradient($top-color, $base-color);
+  }
+
+  .home__footer {
+    margin: 25px 0 10px 0;
   }
 </style>
