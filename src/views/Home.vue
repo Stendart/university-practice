@@ -10,13 +10,14 @@
                     class="home__lesson-tablet"></lessonTablet>
         <img class="home__bg-image" alt="bg image" src="../assets/3.jpg">
     </div>
-
+      <AppFooter></AppFooter>
   </div>
 </template>
 
 <script>
 import AppHeader from '../components/header/AppHeader';
 import lessonTablet from '../components/lessonTablet';
+import AppFooter from '../components/footer/AppFooter';
 
 export default {
   name: 'Home',
@@ -46,7 +47,8 @@ export default {
   },
   components: {
     AppHeader,
-    lessonTablet
+    lessonTablet,
+    AppFooter
   }
 }
 </script>
