@@ -6,12 +6,12 @@
                       :teacher-name="lesson.teacherName"
                       :lesson-number="lesson.lessonNumber"
                       class="home__lesson-tablet"></lessonTablet>
-        <img class="home__bg-image" alt="bg image" src="../assets/3.jpg">
+        <img class="home__bg-image" alt="bg image" src="../../assets/3.jpg">
     </div>
 </template>
 
 <script>
-    import lessonTablet from './lessonTablet';
+    import lessonTablet from '../lessonTablet';
   export default {
     name: "LessonList",
     data() {
@@ -45,7 +45,7 @@
 </script>
 
 <style scoped lang="scss">
-@import "../variables.scss";
+@import "../../variables";
 
 .lesson_list {
     position: relative;

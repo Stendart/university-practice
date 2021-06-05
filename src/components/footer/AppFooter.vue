@@ -1,12 +1,12 @@
 <template>
     <div class="footer">
         <div>
-            <font-awesome-icon class="footer__icon" icon="bell" size="2x"/>
+            <font-awesome-icon class="footer__icon" icon="bell" size="2x" @click="goToClasses"/>
             <font-awesome-icon class="footer__icon footer__inside_icon" icon="save" size="2x"/>
         </div>
         <div>
             <font-awesome-icon class="footer__icon footer__inside_icon" icon="comments" size="2x"/>
-            <font-awesome-icon class="footer__icon" icon="cogs" size="2x"/>
+            <font-awesome-icon class="footer__icon" icon="cogs" size="2x" @click="goToSettings"/>
         </div>
 
     </div>
@@ -15,7 +15,15 @@
 <script>
 
   export default {
-    name: "AppFooter"
+    name: "AppFooter",
+    methods: {
+      goToSettings() {
+        this.$router.push('setting')
+      },
+      goToClasses() {
+        this.$router.push('/')
+      }
+    }
   }
 </script>
 

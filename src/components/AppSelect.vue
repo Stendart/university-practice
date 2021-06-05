@@ -31,7 +31,7 @@
 </script>
 
 <style scoped lang="scss">
-@import '../../variables';
+@import '../variables';
 
 .select {
     display: flex;
@@ -41,6 +41,7 @@
 }
 .select__list {
     padding: 10px;
+    border: 1px solid $border-color;
 }
 .select__title {
     margin: 0;

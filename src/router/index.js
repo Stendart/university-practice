@@ -1,35 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import LessonList from '../components/LessonList';
+import LessonList from '../components/main/LessonList';
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
     component: Home,
     children: [
       {
-        path: '/',
+        path: '',
         component: LessonList
       },
       {
-        // при совпадении пути с шаблоном /user/:id/posts
-        // в <router-view> компонента User будет показан UserPosts
         path: 'setting',
-        component: () => import('../components/AppSettings.vue')
+        component: () => import('../components/main/AppSettings.vue')
       }
     ]
   },
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import('../views/About.vue')
   }
 ]
 

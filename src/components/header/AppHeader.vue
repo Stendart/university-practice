@@ -1,17 +1,17 @@
 <template>
     <div class="header">
-        <AppTimetable :week-type="weekType" :date="date"></AppTimetable>
+        <AppTimetable :week-type="getWeekType" :date="getDate"></AppTimetable>
         <div class="header__selected-wrapper">
             <AppSelect :title="'Курс обучения'"
-                       :item-list="courseList"
+                       :item-list="getCourseList"
                        @changeItem="changeItem"
             ></AppSelect>
             <AppSelect :title="'Группа'"
-                       :item-list="groupList"
+                       :item-list="getGroupList"
                        @changeItem="changeItem"
             ></AppSelect>
             <AppSelect :title="'День недели'"
-                       :item-list="weekDayList"
+                       :item-list="getWeekDayList"
                        @changeItem="changeItem"
             ></AppSelect>
         </div>
@@ -20,17 +20,14 @@
 
 <script>
 import AppTimetable from './AppTimetable';
-import AppSelect from './AppSelect';
+import AppSelect from '../AppSelect';
 
   export default {
     name: "AppHeader",
     data() {
       return {
-        date: new Date,
-        weekType: 'Верхняя',
-        courseList: ['1 курс', '2 курс', '3 курс'],
-        groupList: ['ИВТ', 'Филология', 'История'],
-        weekDayList: ['Понедельник', 'Вторник', 'Среда'],
+        // date: new Date,
+        // weekDayList: ['Понедельник', 'Вторник', 'Среда'],
       }
     },
     methods: {
@@ -39,6 +36,21 @@ import AppSelect from './AppSelect';
       }
     },
     computed: {
+      getWeekType() {
+        return this.$store.getters.weekType
+      },
+      getCourseList() {
+        return this.$store.getters.courseList
+      },
+      getGroupList() {
+        return this.$store.getters.groupList
+      },
+      getDate() {
+        return this.$store.getters.getDate
+      },
+      getWeekDayList() {
+        return this.$store.getters.weekDayList
+      },
     },
     components: {
       AppTimetable,
@@ -51,12 +63,15 @@ import AppSelect from './AppSelect';
 @import '../../variables';
 
 .header {
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid $border-color;
 
 }
 .header__selected-wrapper {
     width: 95%;
-    margin: 0 auto;
-    margin-top: 5px;
+    margin: 5px auto 0;
+    /*margin-top: 5px;*/
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
