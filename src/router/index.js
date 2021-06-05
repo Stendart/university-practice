@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import LessonList from '../components/LessonList';
 
 Vue.use(VueRouter)
 
@@ -8,7 +9,19 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: '/',
+        component: LessonList
+      },
+      {
+        // при совпадении пути с шаблоном /user/:id/posts
+        // в <router-view> компонента User будет показан UserPosts
+        path: 'setting',
+        component: () => import('../components/AppSettings.vue')
+      }
+    ]
   },
   {
     path: '/about',

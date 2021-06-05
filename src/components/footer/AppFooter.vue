@@ -22,19 +22,18 @@
 <style scoped lang="scss">
     @import '../../variables';
 .footer {
-    padding: 10px;
+    /*padding: 10px;*/
 
     display: flex;
     justify-content: space-between;
 }
 
     .footer__inside_icon {
-        margin: 0 30px;
+        margin: 0 25px;
     }
 
     .footer__icon {
         color: #9f9d9e;
-        border-color: black;
 
         &:hover {
             color: $green-color;

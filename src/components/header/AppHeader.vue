@@ -56,6 +56,7 @@ import AppSelect from './AppSelect';
 .header__selected-wrapper {
     width: 95%;
     margin: 0 auto;
+    margin-top: 5px;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
