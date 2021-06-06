@@ -17,6 +17,10 @@ const routes = [
       {
         path: 'setting',
         component: () => import('../components/main/AppSettings.vue')
+      },
+      {
+        path: 'schedule',
+        component: () => import('../components/main/ClassesSchedule.vue')
       }
     ]
   },

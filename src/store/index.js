@@ -12,6 +12,31 @@ export default new Vuex.Store({
     faculty: ['Филологический', 'ФТФ', 'Ин. яз'],
     weekDayList: ['Понедельник', 'Вторник', 'Среда'],
 
+    lessonsList:['Физ-ра', 'Математика', 'Программирование', 'БД'],
+
+    classesTime: [
+      {
+        start: '8:00',
+        end: '9:30'
+      },
+      {
+        start: '9:50',
+        end: '11:20'
+      },
+      {
+        start: '11:30',
+        end: '13:00'
+      },
+      {
+        start: '13:10',
+        end: '14:40'
+      },
+      {
+        start: '14:45',
+        end: '16:15'
+      },
+    ],
+
     decorationColor: '#9ccd64',
   },
   mutations: {
@@ -42,6 +67,15 @@ export default new Vuex.Store({
     },
     getDecorationColor(state) {
       return state.decorationColor
+    },
+    getClassesTime(state) {
+      return state.classesTime
+    },
+    getLessonsList(state) {
+      return state.lessonsList
+    },
+    getCountLessons(state) {
+      return state.lessonsList.length
     }
   },
   modules: {

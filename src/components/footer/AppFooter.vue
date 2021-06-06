@@ -2,7 +2,10 @@
     <div class="footer" :style="{'--bgColor': getDecorationColor}">
         <div>
             <font-awesome-icon class="footer__icon" icon="bell" size="2x" @click="goToClasses"/>
-            <font-awesome-icon class="footer__icon footer__inside_icon" icon="save" size="2x"/>
+            <font-awesome-icon
+                    class="footer__icon footer__inside_icon"
+                    icon="save" size="2x"
+                    @click="goToSchedule"/>
         </div>
         <div>
             <font-awesome-icon class="footer__icon footer__inside_icon" icon="comments" size="2x"/>
@@ -22,6 +25,9 @@
       },
       goToClasses() {
         this.$router.push('/')
+      },
+      goToSchedule() {
+        this.$router.push('/schedule')
       }
     },
     computed: {
