@@ -3,15 +3,15 @@
         <h2 class="setting__title">Настройка приложения</h2>
         <AppSelect :title="'Факультет'"
                    :item-list="getFaculty"
-                   @changeItem="changeItem"
+                   @changeItem="changeItem" class="setting__select"
         ></AppSelect>
         <AppSelect :title="'Курс'"
                    :item-list="getCourseList"
-                   @changeItem="changeItem"
+                   @changeItem="changeItem" class="setting__select"
         ></AppSelect>
         <AppSelect :title="'Группа'"
                    :item-list="getGroupList"
-                   @changeItem="changeItem"
+                   @changeItem="changeItem" class="setting__select"
         ></AppSelect>
         <ColorSelect class="setting__color_select"></ColorSelect>
     </div>
@@ -60,4 +60,8 @@ import ColorSelect from '../ColorSelect';
 .setting__color_select {
     margin-top: 10px;
 }
+
+    .setting__select {
+        margin-top: 10px;
+    }
 </style>

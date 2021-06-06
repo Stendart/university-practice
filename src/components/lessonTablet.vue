@@ -1,5 +1,5 @@
 <template>
-    <div class="lesson-tablet">
+    <div class="lesson-tablet" :style="{'background-color': getDecorationColor, '--bgColor': getDecorationColor}">
         <span>{{lessonName}}</span>
         <span>{{classNumber}}</span>
         <span>{{teacherName}}</span>
@@ -10,7 +10,17 @@
 <script>
   export default {
     name: "lessonTablet",
-    props: ['lessonName', 'classNumber', 'teacherName', 'lessonNumber']
+    props: ['lessonName', 'classNumber', 'teacherName', 'lessonNumber'],
+    data() {
+      return {
+        //bgColor: '#e01c1c'
+      }
+    },
+    computed: {
+      getDecorationColor() {
+        return this.$store.getters.getDecorationColor
+      }
+    }
   }
 </script>
 
@@ -20,7 +30,7 @@
 .lesson-tablet {
     width: 100%;
     min-height: 80px;
-    background-color: $base-color;
+    /*background-color: $base-color;*/
     color: $font-color;
 
     box-shadow: 0 2px 2px rgba(0,0,0,0.5);
@@ -39,8 +49,8 @@
 
         left: calc(100% + 2px);
 
-        background-color: $base-color;
-
+        /*<!--background-color: $base-color;-->*/
+        background-color: var(--bgColor);
         display: none;
     }
 
@@ -50,6 +60,7 @@
         }
     }
 }
+
 
 .lesson-tablet__lesson-number {
     background-color: #4fae61;

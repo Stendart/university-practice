@@ -5,7 +5,7 @@
                       :class-number="lesson.classNumber"
                       :teacher-name="lesson.teacherName"
                       :lesson-number="lesson.lessonNumber"
-                      class="home__lesson-tablet"></lessonTablet>
+                      class="lesson_list-tablet"></lessonTablet>
         <img class="home__bg-image" alt="bg image" src="../../assets/3.jpg">
     </div>
 </template>
@@ -59,11 +59,11 @@
 
     z-index: -1;
 }
-.home__lesson-tablet {
+.lesson_list-tablet {
     margin-top: 10px;
 
     opacity: 0.9;
 
-    background: linear-gradient($top-color, $base-color);
+    /*<!--background: linear-gradient($top-color, $base-color);-->*/
 }
 </style>

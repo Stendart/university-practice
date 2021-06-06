@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <div class="footer" :style="{'--bgColor': getDecorationColor}">
         <div>
             <font-awesome-icon class="footer__icon" icon="bell" size="2x" @click="goToClasses"/>
             <font-awesome-icon class="footer__icon footer__inside_icon" icon="save" size="2x"/>
@@ -23,12 +23,18 @@
       goToClasses() {
         this.$router.push('/')
       }
+    },
+    computed: {
+      getDecorationColor() {
+        return this.$store.getters.getDecorationColor
+      }
     }
   }
 </script>
 
 <style scoped lang="scss">
-    @import '../../variables';
+@import '../../variables';
+
 .footer {
     /*padding: 10px;*/
 
@@ -44,7 +50,7 @@
         color: #9f9d9e;
 
         &:hover {
-            color: $green-color;
+            color: var(--bgColor);
         }
     }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="timetable">
+    <div class="timetable" :style="{'background-color': getDecorationColor}">
         <h3 class="timetable__title">Расписание занятий</h3>
         <span> {{getWeekDay | toUpperCase}} {{getDate}}</span> - <span>{{weekType}} неделя</span>
     </div>
@@ -28,6 +28,9 @@
       },
       getWeekDay() {
         return this.date.toLocaleString('ru-RU', { weekday: 'short'})
+      },
+      getDecorationColor() {
+        return this.$store.getters.getDecorationColor
       }
     },
     filters: {
@@ -42,7 +45,7 @@
     @import '../../variables';
 
     .timetable {
-        background: linear-gradient($top-color, $base-color);
+        /*background: linear-gradient($top-color, $base-color);*/
         color: $font-color;
 
         padding: 10px;

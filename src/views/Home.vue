@@ -65,8 +65,8 @@ export default {
     position: relative;
 
     /*max-height: 300px;*/
-
-      /*overflow-y: auto;*/
+    /*overflow-y: auto;*/
+    /*overflow-x: hidden;*/
   }
 
 
