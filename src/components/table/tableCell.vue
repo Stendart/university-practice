@@ -15,10 +15,12 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+    @import "../../variables";
+
     .cell {
         border: 1px solid black;
-        min-height: 100px;
+        min-height: $table-min-height;
 
         position: relative;
     }

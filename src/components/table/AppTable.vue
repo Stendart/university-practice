@@ -1,8 +1,11 @@
 <template>
     <div>
         <div class="table__lessons" :style="{'color': getDecorationColor}">
-<!--            <tableCell v-for="i in 10" :lesson-name="'Литература'" :class-number="210"></tableCell>-->
-            <tableColumn v-for="day of splitSchedule()" :lesson-list="day"></tableColumn>
+            <tableTimeColumn class="time__column"></tableTimeColumn>
+            <tableColumn v-for="(lessons, day) of getSchedule"
+                         :day="day"
+                         :lesson-list="lessons">
+            </tableColumn>
         </div>
     </div>
 </template>
@@ -10,14 +13,10 @@
 <script>
     import tableCell from './tableCell';
     import tableColumn from './tableColumn';
+    import tableTimeColumn from './tableTimeColumn';
 
   export default {
     methods: {
-      splitSchedule() {
-        console.log('this.getSchedule', this.getSchedule)
-        console.log('this', Object.values(this.getSchedule))
-        return this.getSchedule
-      }
     },
     computed: {
       getDecorationColor() {
@@ -27,22 +26,27 @@
         return this.$store.getters.getSchedule
       },
       getLessonList() {
-        console.log('getLessonList', this.$store.getters.getLessonsList)
         return this.$store.getters.getLessonsList
       },
     },
     components: {
       tableCell,
-      tableColumn
+      tableColumn,
+      tableTimeColumn
     }
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "../../variables";
+
 .table__lessons {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: 0.5fr repeat(5, 1fr);
     /*grid-template-rows: repeat(4, 1fr);*/
     grid-gap: 10px;
+}
+.time__column {
+    margin-top: $table-title-height;
 }
 </style>

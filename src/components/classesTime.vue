@@ -11,7 +11,9 @@
 </template>
 
 <script>
-  export default {
+    import {parseTime} from '../utils';
+
+    export default {
     props: {
       classesNum: Number,
       startClassesTime: Object,
@@ -19,11 +21,7 @@
     },
     methods: {
       parseTime(dateTime) {
-        if(dateTime.minutes >= 0 && dateTime.minutes < 10) {
-          return `${dateTime.hour} : 0${dateTime.minutes}`
-        } else if (dateTime.minutes >= 10 && dateTime.minutes < 60) {
-          return `${dateTime.hour} : ${dateTime.minutes}`
-        } else throw new Error('Ошибка! Количество минут может быть лишь в диапазоне [0, 59]')
+        return parseTime(dateTime)
       }
     },
     computed: {
@@ -34,6 +32,7 @@
         const curentTime = new Date()
         const startClassesTime = new Date()
         const endClassesTime = new Date()
+
         startClassesTime.setHours(this.startClassesTime.hour)
         startClassesTime.setMinutes(this.startClassesTime.minutes)
 

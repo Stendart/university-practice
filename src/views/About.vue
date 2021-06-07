@@ -1,7 +1,7 @@
 <template>
-  <div class="about">
+  <div class="">
     <h1>This is an about page</h1>
-    <AppTable></AppTable>
+    <AppTable class="table"></AppTable>
   </div>
 </template>
 <script>
@@ -21,5 +21,8 @@
 </script>
 
 <style scoped>
-
+.table {
+  width: 80%;
+  margin: 0 auto;
+}
 </style>
