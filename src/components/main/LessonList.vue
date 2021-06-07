@@ -1,6 +1,6 @@
 <template>
     <div class="lesson_list">
-        <lessonTablet v-for="lesson in lessonList" :key="lesson.classNumber"
+        <lessonTablet v-for="lesson in lessonList" :key="lesson.lessonNumber"
                       :lesson-name="lesson.lessonName"
                       :class-number="lesson.classNumber"
                       :teacher-name="lesson.teacherName"
@@ -14,28 +14,9 @@
     import lessonTablet from '../lessonTablet';
   export default {
     name: "LessonList",
-    data() {
-      return {
-        lessonList: [
-          {
-            lessonName: 'Алгебра',
-            classNumber: '210',
-            teacherName: 'Ольга Ивановна',
-            lessonNumber: '3 пара'
-          },
-          {
-            lessonName: 'Алгебра',
-            classNumber: '110',
-            teacherName: 'Ольга Ивановна',
-            lessonNumber: '4 пара'
-          },
-          {
-            lessonName: 'Английский',
-            classNumber: '411',
-            teacherName: 'Ирина Олеговна',
-            lessonNumber: '5 пара'
-          },
-        ]
+    computed: {
+      lessonList() {
+        return this.$store.getters.getLessonsList
       }
     },
     components: {

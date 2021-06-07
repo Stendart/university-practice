@@ -1,8 +1,12 @@
 <template>
     <div class="classesTime" :style="{'color': decorationColor}">
-        <span class="classesTime__number">{{classesNum}}</span>
-        <span class="classesTime__time">{{startClassesTime}}</span>
-        <span class="classesTime__time">{{endClassesTime}}</span>
+        <span class="classesTime__number">
+            <span class="classesTime__border" :style="selectLesson">
+                {{classesNum}}
+            </span>
+        </span>
+        <span class="classesTime__time">{{parseTime(startClassesTime)}}</span>
+        <span class="classesTime__time">{{parseTime(endClassesTime)}}</span>
     </div>
 </template>
 
@@ -10,12 +14,56 @@
   export default {
     props: {
       classesNum: Number,
-      startClassesTime: String,
-      endClassesTime: String,
+      startClassesTime: Object,
+      endClassesTime: Object,
+    },
+    methods: {
+      parseTime(dateTime) {
+        if(dateTime.minutes >= 0 && dateTime.minutes < 10) {
+          return `${dateTime.hour} : 0${dateTime.minutes}`
+        } else if (dateTime.minutes >= 10 && dateTime.minutes < 60) {
+          return `${dateTime.hour} : ${dateTime.minutes}`
+        } else throw new Error('Ошибка! Количество минут может быть лишь в диапазоне [0, 59]')
+
+        // console.log('НОВАЯ ДАТА', new Date(dateTime))
+      }
     },
     computed: {
       decorationColor() {
         return this.$store.getters.getDecorationColor
+      },
+      isCurentLesson() {
+        const curentTime = new Date()
+        const startClassesTime = new Date()
+        const endClassesTime = new Date()
+        startClassesTime.setHours(this.startClassesTime.hour)
+        startClassesTime.setMinutes(this.startClassesTime.minutes)
+
+        endClassesTime.setHours(this.endClassesTime.hour)
+        endClassesTime.setMinutes(this.endClassesTime.minutes)
+
+        if(startClassesTime < curentTime && curentTime < endClassesTime) {
+          console.log('Exactly')
+          return true
+        }
+
+
+        // date.setHours()
+        // console.log('date getHours', date.getHours())
+        // console.log('date getMinutes', date.getMinutes())
+        // if(this.startClassesTime.hour <= date.getHours() && this.endClassesTime.hour >= date.getHours()) {
+        //   console.log('ПРОШЛО ЧАСЫ')
+        //   console.log(this.startClassesTime.minutes)
+        //   console.log(date.getMinutes())
+        //   if(this.startClassesTime.minutes < date.getMinutes() && this.endClassesTime.minutes > date.getMinutes()) {
+        //     console.log('ПРОШЛО МИНУТЫ')
+        //     return true
+        //   }
+        // }
+        return false
+      },
+      selectLesson() {
+        return this.isCurentLesson ? 'border : 5px solid' + this.decorationColor : ''
       }
     }
   }
@@ -33,11 +81,21 @@
     border-top: 1px solid #b2b89d;
 }
 
-    .classesTime__number {
-        font-size: 64px;
-    }
+.classesTime__number {
+    font-size: 64px;
+}
 
-    .classesTime__time {
-        font-size: 32px;
-    }
+.classesTime__border {
+    display: block;
+
+    text-align: center;
+
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.classesTime__time {
+    font-size: 32px;
+}
 </style>
