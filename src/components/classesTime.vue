@@ -24,8 +24,6 @@
         } else if (dateTime.minutes >= 10 && dateTime.minutes < 60) {
           return `${dateTime.hour} : ${dateTime.minutes}`
         } else throw new Error('Ошибка! Количество минут может быть лишь в диапазоне [0, 59]')
-
-        // console.log('НОВАЯ ДАТА', new Date(dateTime))
       }
     },
     computed: {
@@ -42,25 +40,7 @@
         endClassesTime.setHours(this.endClassesTime.hour)
         endClassesTime.setMinutes(this.endClassesTime.minutes)
 
-        if(startClassesTime < curentTime && curentTime < endClassesTime) {
-          console.log('Exactly')
-          return true
-        }
-
-
-        // date.setHours()
-        // console.log('date getHours', date.getHours())
-        // console.log('date getMinutes', date.getMinutes())
-        // if(this.startClassesTime.hour <= date.getHours() && this.endClassesTime.hour >= date.getHours()) {
-        //   console.log('ПРОШЛО ЧАСЫ')
-        //   console.log(this.startClassesTime.minutes)
-        //   console.log(date.getMinutes())
-        //   if(this.startClassesTime.minutes < date.getMinutes() && this.endClassesTime.minutes > date.getMinutes()) {
-        //     console.log('ПРОШЛО МИНУТЫ')
-        //     return true
-        //   }
-        // }
-        return false
+        return startClassesTime < curentTime && curentTime < endClassesTime
       },
       selectLesson() {
         return this.isCurentLesson ? 'border : 5px solid' + this.decorationColor : ''

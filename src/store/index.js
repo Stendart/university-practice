@@ -15,52 +15,245 @@ export default new Vuex.Store({
     lessonsList:[
       {
         lessonName: 'Алгебра',
-        classNumber: '210',
+        classNumber: 210,
         teacherName: 'Ольга Ивановна',
         lessonNumber: '3 пара'
       },
       {
         lessonName: 'Алгебра',
-        classNumber: '110',
+        classNumber: 110,
         teacherName: 'Ольга Ивановна',
         lessonNumber: '4 пара'
       },
       {
         lessonName: 'Английский',
-        classNumber: '411',
+        classNumber: 411,
         teacherName: 'Ирина Олеговна',
         lessonNumber: '5 пара'
       },
       {
         lessonName: 'Английский',
-        classNumber: '411',
+        classNumber: 411,
         teacherName: 'Ирина Олеговна',
         lessonNumber: '6 пара'
       },
       {
         lessonName: 'Английский',
-        classNumber: '411',
+        classNumber: 411,
         teacherName: 'Ирина Олеговна',
         lessonNumber: '7 пара'
       },
       {
         lessonName: 'Английский',
-        classNumber: '411',
+        classNumber: 411,
         teacherName: 'Ирина Олеговна',
         lessonNumber: '8 пара'
       },
     ],
+
+    schedule: {
+      'Пн': [
+        {
+          lessonName: 'Алгебра',
+          classNumber: 210,
+          teacherName: 'Ольга Ивановна',
+          lessonNumber: '3 пара'
+        },
+        {
+          lessonName: 'Алгебра',
+          classNumber: 110,
+          teacherName: 'Ольга Ивановна',
+          lessonNumber: '4 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '5 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '6 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '7 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '8 пара'
+        },
+      ],
+      'Вт': [
+        {
+          lessonName: 'Алгебра',
+          classNumber: 210,
+          teacherName: 'Ольга Ивановна',
+          lessonNumber: '3 пара'
+        },
+        {
+          lessonName: 'Алгебра',
+          classNumber: 110,
+          teacherName: 'Ольга Ивановна',
+          lessonNumber: '4 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '5 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '6 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '7 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '8 пара'
+        },
+      ],
+      'Ср': [
+        {
+          lessonName: 'Алгебра',
+          classNumber: 210,
+          teacherName: 'Ольга Ивановна',
+          lessonNumber: '3 пара'
+        },
+        {
+          lessonName: 'Алгебра',
+          classNumber: 110,
+          teacherName: 'Ольга Ивановна',
+          lessonNumber: '4 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '5 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '6 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '7 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '8 пара'
+        },
+      ],
+      'Чт': [
+        {
+          lessonName: 'Алгебра',
+          classNumber: 210,
+          teacherName: 'Ольга Ивановна',
+          lessonNumber: '3 пара'
+        },
+        {
+          lessonName: 'Алгебра',
+          classNumber: 110,
+          teacherName: 'Ольга Ивановна',
+          lessonNumber: '4 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '5 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '6 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '7 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '8 пара'
+        },
+      ],
+      'Пт': [
+        {
+          lessonName: 'Алгебра',
+          classNumber: 210,
+          teacherName: 'Ольга Ивановна',
+          lessonNumber: '3 пара'
+        },
+        {
+          lessonName: 'Алгебра',
+          classNumber: 110,
+          teacherName: 'Ольга Ивановна',
+          lessonNumber: '4 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '5 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '6 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '7 пара'
+        },
+        {
+          lessonName: 'Английский',
+          classNumber: 411,
+          teacherName: 'Ирина Олеговна',
+          lessonNumber: '8 пара'
+        },
+      ],
+    },
 
     classesTime: [
       {
         start: {
           hour: 8,
           minutes: 0
-        } ,//new Date().setHours(9, 30),// '8:00',
+        },
         end: {
           hour: 9,
           minutes: 30
-        }//new Date().setHours(9, 30), //'9:30'
+        }
       },
       {
         start: {
@@ -153,6 +346,9 @@ export default new Vuex.Store({
     },
     getCountLessons(state) {
       return state.lessonsList.length
+    },
+    getSchedule(state) {
+      return state.schedule
     }
   },
   modules: {
