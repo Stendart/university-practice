@@ -60,6 +60,7 @@ import lessonInfo from './lessonInfo';
 .table__setting {
     border-top: 1px solid $border-color;
     padding-top: 50px;
+    margin-top: 30px;
     margin-bottom: 60px;
 }
 </style>

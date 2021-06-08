@@ -16,7 +16,7 @@
         return this.$store.getters.getClassesTime
       },
       getCountLessons() {
-        return this.$store.getters.getCountLessons
+        return this.$store.getters.getLessonsList.length
       }
     },
     components: {
