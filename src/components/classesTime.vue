@@ -1,12 +1,12 @@
 <template>
-    <div class="classesTime" :style="{'color': decorationColor}">
-        <span class="classesTime__number">
-            <span class="classesTime__border" :style="selectLesson">
+    <div class="classes-time" :style="{'color': decorationColor}">
+        <span class="classes-time__number">
+            <span class="classes-time__border" :style="selectLesson">
                 {{classesNum}}
             </span>
         </span>
-        <span class="classesTime__time">{{parseTime(startClassesTime)}}</span>
-        <span class="classesTime__time">{{parseTime(endClassesTime)}}</span>
+        <span class="classes-time__time">{{parseTime(startClassesTime)}}</span>
+        <span class="classes-time__time">{{parseTime(endClassesTime)}}</span>
     </div>
 </template>
 
@@ -49,7 +49,7 @@
 </script>
 
 <style scoped>
-.classesTime {
+.classes-time {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 10px;
@@ -60,11 +60,11 @@
     border-top: 1px solid #b2b89d;
 }
 
-.classesTime__number {
+.classes-time__number {
     font-size: 64px;
 }
 
-.classesTime__border {
+.classes-time__border {
     display: block;
 
     text-align: center;
@@ -74,7 +74,7 @@
     border-radius: 50%;
 }
 
-.classesTime__time {
+.classes-time__time {
     font-size: 32px;
 }
 </style>

@@ -23,7 +23,6 @@
     },
     watch: {
       selectItem(value) {
-        // console.log(value)
         this.$emit('changeItem', value)
       }
     }
@@ -38,6 +37,8 @@
     flex-direction: column;
 
     text-align: left;
+
+    /*width: 100%;*/
 }
 .select__list {
     padding: 10px;

@@ -7,6 +7,7 @@
                          :lesson-list="lessons">
             </tableColumn>
         </div>
+        <tableSetting class="table__setting"></tableSetting>
     </div>
 </template>
 
@@ -14,6 +15,7 @@
     import tableCell from './tableCell';
     import tableColumn from './tableColumn';
     import tableTimeColumn from './tableTimeColumn';
+    import tableSetting from './tableSetting';
 
   export default {
     methods: {
@@ -32,7 +34,8 @@
     components: {
       tableCell,
       tableColumn,
-      tableTimeColumn
+      tableTimeColumn,
+      tableSetting
     }
   }
 </script>
@@ -43,10 +46,14 @@
 .table__lessons {
     display: grid;
     grid-template-columns: 0.5fr repeat(5, 1fr);
-    /*grid-template-rows: repeat(4, 1fr);*/
     grid-gap: 10px;
 }
 .time__column {
     margin-top: $table-title-height;
+}
+.table__setting {
+    border-top: 1px solid $border-color;
+    padding-top: 50px;
+    margin-bottom: 60px;
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div class="">
-    <h1>This is an about page</h1>
     <AppTable class="table"></AppTable>
   </div>
 </template>
@@ -8,7 +7,7 @@
   import AppTable from '../components/table/AppTable';
 
   export default {
-    name: 'About',
+    name: 'Table',
     data() {
       return {
 

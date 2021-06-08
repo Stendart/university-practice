@@ -1,6 +1,6 @@
 <template>
-    <div class="setting">
-        <h2 class="setting__title" :style="{'color': getDecorationColor}">Настройка приложения</h2>
+    <div class="table-setting">
+<!--        <basicSettings is-gorizontal="true" class="table-setting__basic-settings"></basicSettings>-->
         <AppSelect :title="'Факультет'"
                    :item-list="getFaculty"
                    @changeItem="changeItem" class="setting__select"
@@ -13,36 +13,30 @@
                    :item-list="getGroupList"
                    @changeItem="changeItem" class="setting__select"
         ></AppSelect>
-        <ColorSelect class="setting__color_select"></ColorSelect>
+        <input type="search" class="table-setting__search" placeholder="Поиск">
     </div>
 </template>
 
 <script>
 import AppSelect from '../AppSelect';
-import ColorSelect from '../ColorSelect';
 
-import {basicSetting} from '../../mixins/basicSettingSelectedMixins'
+import {basicSetting} from '../../mixins/basicSettingSelectedMixins';
 
-  export default {
-    mixins:[basicSetting],
+export default {
+  mixins: [basicSetting],
     components: {
       AppSelect,
-      ColorSelect,
     }
   }
 </script>
 
-<style scoped lang="scss">
-@import "../../variables";
+<style scoped>
 
-.setting__title {
-    text-align: left;
+.table-setting {
+    display: flex;
+    justify-content: space-between;
 }
-.setting__color_select {
-    margin-top: 10px;
-}
-
-.setting__select {
-    margin-top: 10px;
+.table-setting__search {
+    border-style: none none solid;
 }
 </style>
