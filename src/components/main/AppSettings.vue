@@ -3,15 +3,15 @@
         <h2 class="setting__title" :style="{'color': getDecorationColor}">Настройка приложения</h2>
         <AppSelect :title="'Факультет'"
                    :item-list="getFaculty"
-                   @changeItem="changeItem" class="setting__select"
+                   @changeItem="changeItem($event, 'faculty')" class="setting__select"
         ></AppSelect>
         <AppSelect :title="'Курс'"
                    :item-list="getCourseList"
-                   @changeItem="changeItem" class="setting__select"
+                   @changeItem="changeItem($event, 'course')" class="setting__select"
         ></AppSelect>
         <AppSelect :title="'Группа'"
                    :item-list="getGroupList"
-                   @changeItem="changeItem" class="setting__select"
+                   @changeItem="changeItem($event, 'group')" class="setting__select"
         ></AppSelect>
         <ColorSelect class="setting__color_select"></ColorSelect>
     </div>

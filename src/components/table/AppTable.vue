@@ -7,15 +7,20 @@
                          :lesson-list="lessons">
             </tableColumn>
         </div>
+        <lessonInfo :class-number="400"
+                    :lesson-name="'Русский'"
+                    :teacher-name="'Петров'">
+        </lessonInfo>
         <tableSetting class="table__setting"></tableSetting>
     </div>
 </template>
 
 <script>
-    import tableCell from './tableCell';
-    import tableColumn from './tableColumn';
-    import tableTimeColumn from './tableTimeColumn';
-    import tableSetting from './tableSetting';
+import tableCell from './tableCell';
+import tableColumn from './tableColumn';
+import tableTimeColumn from './tableTimeColumn';
+import tableSetting from './tableSetting';
+import lessonInfo from './lessonInfo';
 
   export default {
     methods: {
@@ -35,7 +40,8 @@
       tableCell,
       tableColumn,
       tableTimeColumn,
-      tableSetting
+      tableSetting,
+      lessonInfo
     }
   }
 </script>

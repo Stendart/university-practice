@@ -9,20 +9,20 @@
 </template>
 
 <script>
-    import {parseTime} from '../../utils';
+import {parseTime} from '../../utils';
 
-    export default {
-      methods: {
-        parseTime(time) {
-          return parseTime(time)
-        }
-      },
+export default {
+    methods: {
+      parseTime(time) {
+        return parseTime(time)
+      }
+    },
     computed: {
       getClassesTime() {
         return this.$store.getters.getClassesTime
       },
     }
-  }
+}
 </script>
 
 <style scoped lang="scss">

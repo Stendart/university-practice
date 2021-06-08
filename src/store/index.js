@@ -5,12 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    date: new Date,
     weekType: 'Верхняя',
     courseList: ['1 курс', '2 курс', '3 курс'],
+    selectedCourse: '1 курс',
     groupList: ['ИВТ', 'Филология', 'История'],
+    selectedGroup: 'ИВТ',
     faculty: ['Филологический', 'ФТФ', 'Ин. яз'],
-    weekDayList: ['Понедельник', 'Вторник', 'Среда'],
+    selectedFaculty: 'ФТФ',
+    weekDayList: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+    selectedDay: 'Пн',
 
     lessonsList:[
       {
@@ -92,13 +95,13 @@ export default new Vuex.Store({
       ],
       'Вт': [
         {
-          lessonName: 'Алгебра',
+          lessonName: 'Русский',
           classNumber: 210,
           teacherName: 'Ольга Ивановна',
           lessonNumber: '3 пара'
         },
         {
-          lessonName: 'Алгебра',
+          lessonName: 'Русский',
           classNumber: 110,
           teacherName: 'Ольга Ивановна',
           lessonNumber: '4 пара'
@@ -110,7 +113,7 @@ export default new Vuex.Store({
           lessonNumber: '5 пара'
         },
         {
-          lessonName: 'Английский',
+          lessonName: 'Русский',
           classNumber: 411,
           teacherName: 'Ирина Олеговна',
           lessonNumber: '6 пара'
@@ -130,19 +133,19 @@ export default new Vuex.Store({
       ],
       'Ср': [
         {
-          lessonName: 'Алгебра',
+          lessonName: 'Физ-ра',
           classNumber: 210,
           teacherName: 'Ольга Ивановна',
           lessonNumber: '3 пара'
         },
         {
-          lessonName: 'Алгебра',
+          lessonName: 'Физ-ра',
           classNumber: 110,
           teacherName: 'Ольга Ивановна',
           lessonNumber: '4 пара'
         },
         {
-          lessonName: 'Английский',
+          lessonName: 'Физ-ра',
           classNumber: 411,
           teacherName: 'Ирина Олеговна',
           lessonNumber: '5 пара'
@@ -168,19 +171,19 @@ export default new Vuex.Store({
       ],
       'Чт': [
         {
-          lessonName: 'Алгебра',
+          lessonName: 'Информатика',
           classNumber: 210,
           teacherName: 'Ольга Ивановна',
           lessonNumber: '3 пара'
         },
         {
-          lessonName: 'Алгебра',
+          lessonName: 'Информатика',
           classNumber: 110,
           teacherName: 'Ольга Ивановна',
           lessonNumber: '4 пара'
         },
         {
-          lessonName: 'Английский',
+          lessonName: 'Информатика',
           classNumber: 411,
           teacherName: 'Ирина Олеговна',
           lessonNumber: '5 пара'
@@ -206,19 +209,19 @@ export default new Vuex.Store({
       ],
       'Пт': [
         {
-          lessonName: 'Алгебра',
+          lessonName: 'История',
           classNumber: 210,
           teacherName: 'Ольга Ивановна',
           lessonNumber: '3 пара'
         },
         {
-          lessonName: 'Алгебра',
+          lessonName: 'История',
           classNumber: 110,
           teacherName: 'Ольга Ивановна',
           lessonNumber: '4 пара'
         },
         {
-          lessonName: 'Английский',
+          lessonName: 'История',
           classNumber: 411,
           teacherName: 'Ирина Олеговна',
           lessonNumber: '5 пара'
@@ -312,7 +315,19 @@ export default new Vuex.Store({
   mutations: {
     setDecorationColor(state, color) {
       state.decorationColor = color
-    }
+    },
+    setGroup(state, group) {
+      state.selectedGroup = group
+    },
+    setCourse(state, course) {
+      state.selectedCourse = course
+    },
+    setDay(state, day) {
+      state.selectedDay = day
+    },
+    setFaculty(state, faculty) {
+      state.selectedFaculty = faculty
+    },
   },
   actions: {
   },
@@ -326,9 +341,9 @@ export default new Vuex.Store({
     weekType(state) {
       return state.weekType
     },
-    getDate(state) {
-      return state.date
-    },
+    // getDate(state) {
+    //   return state.date
+    // },
     weekDayList(state) {
       return state.weekDayList
     },
@@ -341,11 +356,14 @@ export default new Vuex.Store({
     getClassesTime(state) {
       return state.classesTime
     },
+    // getLessonsList(state) {
+    //   return state.lessonsList
+    // },
+    // getCountLessons(state) {
+    //   return state.lessonsList.length
+    // },
     getLessonsList(state) {
-      return state.lessonsList
-    },
-    getCountLessons(state) {
-      return state.lessonsList.length
+      return state.schedule[state.selectedDay]
     },
     getSchedule(state) {
       return state.schedule

@@ -4,15 +4,15 @@
         <div class="header__selected-wrapper">
             <AppSelect :title="'Курс обучения'"
                        :item-list="getCourseList"
-                       @changeItem="changeItem"
+                       @changeItem="changeItem($event, 'course')"
             ></AppSelect>
             <AppSelect :title="'Группа'"
                        :item-list="getGroupList"
-                       @changeItem="changeItem"
+                       @changeItem="changeItem($event, 'group')"
             ></AppSelect>
             <AppSelect :title="'День недели'"
                        :item-list="getWeekDayList"
-                       @changeItem="changeItem"
+                       @changeItem="changeItem($event, 'day')"
             ></AppSelect>
         </div>
     </div>
@@ -22,29 +22,26 @@
 import AppTimetable from './AppTimetable';
 import AppSelect from '../AppSelect';
 
-  export default {
+import {basicSetting} from '../../mixins/basicSettingSelectedMixins';
+
+export default {
     name: "AppHeader",
-    data() {
-      return {
-        // date: new Date,
-        // weekDayList: ['Понедельник', 'Вторник', 'Среда'],
-      }
-    },
-    methods: {
-      changeItem(val) {
-        console.log(val)
-      }
-    },
+  mixins: [basicSetting],
+    // methods: {
+    //   changeItem(val) {
+    //     console.log(val)
+    //   }
+    // },
     computed: {
       getWeekType() {
         return this.$store.getters.weekType
       },
-      getCourseList() {
-        return this.$store.getters.courseList
-      },
-      getGroupList() {
-        return this.$store.getters.groupList
-      },
+      // getCourseList() {
+      //   return this.$store.getters.courseList
+      // },
+      // getGroupList() {
+      //   return this.$store.getters.groupList
+      // },
       getDate() {
         return this.$store.getters.getDate
       },
